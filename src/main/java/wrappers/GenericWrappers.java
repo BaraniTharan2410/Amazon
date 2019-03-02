@@ -53,7 +53,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void explicitWait(int time) {
 		try {
 			Thread.sleep(time);
@@ -63,7 +62,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void sendText(String XPath, String data) {
 		try {
 			driver.findElementByXPath(XPath).sendKeys(data);
@@ -75,7 +73,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void click(String XPath) {
 		try {
 			driver.findElementByXPath(XPath).click();
@@ -86,7 +83,6 @@ public class GenericWrappers extends Report implements Wrappers {
 		}
 	}
 
-	@Override
 	public void selectIndexByXpath(String XPath, int Index) {
 		try {
 			WebElement DropDown = driver.findElementByXPath(XPath);
@@ -100,7 +96,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void selectValueByXpath(String XPath, String Value) {
 		try {
 			WebElement DropDown = driver.findElementByXPath(XPath);
@@ -114,7 +109,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void selectVisibleTextXpath(String XPath, String VisibleText) {
 		try {
 			WebElement DropDown = driver.findElementByXPath(XPath);
@@ -128,7 +122,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void mouseOver(String XPath) {
 		try {
 			WebElement Target = driver.findElementByXPath(XPath);
@@ -142,7 +135,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void fileUpload(String filePath) throws AWTException, IOException {
 		try {
 			StringSelection filepath = new StringSelection(filePath);
@@ -166,7 +158,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public long takeSnap() throws IOException {
 		long number = 1000000l;
 		try {
@@ -183,7 +174,6 @@ public class GenericWrappers extends Report implements Wrappers {
 		return number;
 	}
 
-	@Override
 	public void switchToFrameByName(String Name) {
 		try {
 			driver.switchTo().frame(Name);
@@ -194,7 +184,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void acceptAlert() {
 		try {
 			driver.switchTo().alert().accept();
@@ -205,7 +194,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void disimissAlert() {
 		try {
 			driver.switchTo().alert().dismiss();
@@ -216,7 +204,7 @@ public class GenericWrappers extends Report implements Wrappers {
 	}
 
 	/*
-	 * @Override public String getTextAlert() { try { String text =
+	 * public String getTextAlert() { try { String text =
 	 * driver.switchTo().alert().getText();
 	 * 
 	 * } catch (Exception e) {
@@ -227,14 +215,13 @@ public class GenericWrappers extends Report implements Wrappers {
 	 */
 
 	/*
-	 * @Override public String getData(String XPath) { String data; try { data =
+	 * public String getData(String XPath) { String data; try { data =
 	 * driver.findElementByXPath(XPath).getText(); } catch (Exception e) { // TODO
 	 * Auto-generated catch block e.printStackTrace(); } return data;
 	 * 
 	 * }
 	 */
 
-	@Override
 	public void switchToLastWindow() {
 		Set<String> Allwinds = driver.getWindowHandles();
 		for (String laswind : Allwinds) {
@@ -243,7 +230,6 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void switchToParentWindow() {
 		Set<String> Allwinds = driver.getWindowHandles();
 		for (String laswind : Allwinds) {
@@ -253,19 +239,16 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void closeBrowser() {
 		driver.close();
 
 	}
 
-	@Override
 	public void closeAllBrowsers() {
 		driver.quit();
 
 	}
 
-	@Override
 	public void loadObjects() throws IOException {
 		prop = new Properties();
 		FileInputStream file = new FileInputStream("./src/test/java/object.properties");
@@ -273,19 +256,16 @@ public class GenericWrappers extends Report implements Wrappers {
 
 	}
 
-	@Override
 	public void unloadObjects() {
 		prop = null;
 
 	}
 
-	@Override
 	public String getTextAlert() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public String getData(String XPath) {
 		// TODO Auto-generated method stub
 		return null;
